@@ -1,0 +1,39 @@
+{% extends'base.html' %}
+{% block conteudo %}
+
+<main class="text-center mt-5 text-black">
+        <h2>Contato</h2>
+        <div class="row">
+            <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <form action="" method="POST">
+                        {{ form.csrf_token }}
+                        <div class="text-start form-group">
+                            <label for="text">Nome completo</label>
+                            {{ form.nome(class="form-control", placeholder="Digite seu nome")}}
+                            
+                            <label for="email">E-mail</label>
+                            {{ form.email(class="form-control", placeholder="Digite seu email")}}
+                            
+                            <label for="text">Assunto</label>
+                            {{ form.assunto(class="form-control", placeholder="Digite o assunto a tratar")}}
+                           
+                            <label for="text">Corpo do e-mail</label>
+                            {{ form.mensagem(class="form-control", rows="3", placeholder="Digite seu texto")}}
+                            
+                            <label for="file">Arquivo</label>
+                            <input class="form-control" type="file" name="file" >
+                                <div class="text-start form-group text-center">
+                                    {{ form.submit(class="text-center mt-4 btn btn-light")}}
+                                    <input type="reset" value="Limpar" class="text-center mt-4 btn btn-light">
+                                   
+                                </div>
+                        
+                        </div>
+                    </form>
+                </div>
+            <div class="col-md-3"></div>
+        </div>
+</main>
+{% endblock %}
+  
